@@ -1,13 +1,280 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Quicksand:wght@700&family=Roboto:wght@100&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    border-color: white;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+header{
+    position: relative;
+}
+
+.wrapper{
+    width: 1280px;
+    margin: 50px auto;
+}
+
+header ul.nav{
+    float: right;
+    list-style: none;
+
+}
+
+header ul.nav li{
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+header ul.nav li:hover {
+    opacity: 0.5;
+}
+
+header .logo{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header .presentation{
+    margin: 50px 0;
+    background: url('./img/xz.jpg') no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: #d6d6d6;
+    position: relative;
+
+}
+
+header .presentation::after{
+    content: 'Лучшие товары для вашего дома!';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+}
+
+header .presentation::before {
+    content: 'по низким ценам';
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: 300px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.shop-cart-button{
+    float: right;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+header .shop-cart-button:hover{
+        color: #ca5252;
+        transform: scale(1.5);
+}
+
+.active {
+    color: #ca5252;
+    transform: scale(1.5);
+}
+
+header .shop-cart{
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 450px;
+    background-color: #fafafa;
+    -webkit-box-shadow: 8px 3px 25px -6px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 3px 25px -6px rgba(66, 68, 90, 1);
+    box-shadow: 8px 3px 25px -6px rgba(66, 68, 90, 1);
+    z-index: 1000;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+header .shop-cart .item{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item img{
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+header .shop-cart .item b{
+    color: #5fa36a;
+    font-weight: 600;
+}
+
+.summa{
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+ 
+.delete-icon{
+    float: right;
+    margin-right: 10px;
+    margin-top: -20px;
+    color: #ca5252;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-icon:hover {
+    color: #da2d2d;
+    transform: scale(1.5);
+}
+
+.emti{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.categories div{
+    display: inline-block;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.categories div:hover {
+    background-color: #ca5252;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    overflow: auto;
+}
+
+.full-item > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.full-item img{
+    height: 500px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f5f5f5;
+    overflow: hidden; 
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+main .item img{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+main .item img:hover,
+.full-item img:hover{
+    transform: scale(1.05);
+}
+
+main h2, main p, main b, 
+.full-item h2, .full-item, p, .full-item b{
+    margin: 10px 20px;
+    color: #333;
+}
+
+main b,
+.full-item b {
+    color: #5fa36a;
+}
+
+main p,
+.full-item p{
+    margin-bottom: 25px;
+}
+
+main .add-to-cart,
+.full-item .add-to-cart{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    background: #ca5252;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover{
+    transform: scale(1.5);
+}
+
+footer{
+    text-align: center;
+    margin-top: 100px;
 }
